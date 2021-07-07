@@ -1,0 +1,55 @@
+<!--pages/activity/signup/signup.wxml-->
+<!-- banner图 -->
+<view class='bg_white' style='padding-bottom:554rpx;'>
+  <image mode='widthFix' src='{{pic}}' style='width:100%;height:auto;'></image>
+</view>
+
+<!-- 表单主要内容 -->
+<view class='p_b20'>
+  <view class="title">请填写学生信息</view>
+  <form bindsubmit="formSubmit">
+    <view class='addview20' style='padding-bottom:30rpx;'>
+      <view class='bg_white font14 gray5 p_all10 box'>
+        <view class="name-box">
+        <input type='text' class='inputstyle' placeholder-class='place' name="userName"></input>
+         <view class="name-text">学生姓名：</view>
+        </view>
+        <view class='inputstyle pic-box'>
+          
+          <picker mode = "selector" bindchange="bindPickerGrade" data-id="{{grades[index].id}}" value="{{grades[index].id}}" range="{{grades}}" range-key="name">
+           
+            <text class='fr m_t5 grayb' style="position:absolute; width:50rpx; bottom:30rpx;right:20rpx; color:#666">﹀</text>
+            <view class="pic-text">学生年级：{{grades[index].name}}</view>
+            
+          </picker>
+        </view>
+      </view>
+      <!-- 正文内容 -->
+      <view class='p_lr15' wx:if="{{content.length > 0}}">
+        <view class='contentView' wx:for="{{content}}">
+          <view class='m_t30 pr' wx:if="{{item.name == 'img'}}">
+            <image src='{{item.contents}}' mode='widthFix' style='width:100%;'></image>
+            <view class='delet pa tc font22 white bg_grayc' data-index='{{index}}' bindtap='deletTap'><text>×</text></view>
+          </view>
+          <view class='font15 gray2 tj lineH_m text p_all10 m_t30 pr' wx:if="{{item.name == 'text'}}">
+            <text>{{item.contents}}</text>
+            <view class='delet pa font22 white bg_grayc' data-index='{{index}}' bindtap='deletTap'><text>×</text></view>
+            <view class='edit pa bg_grayc tc' data-index='{{index}}' bindtap='editTap'>
+              <image src='/images/icon/edit.png' style='width:26rpx;height:26rpx;margin-top:12rpx'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  <!-- 提交报名 -->
+    <view class='tr p_lr15 bg_white'>
+      <button class='form_button' form-type="submit">
+        <text class='p_tb5 p_lr20 bg_theme white font16 tc block'>立即签到</text>
+      </button>
+    </view>
+  </form>
+</view>
+<wxgetUser class="wxgetUser"></wxgetUser>
+<wxgetPhone class="wxgetPhone"></wxgetPhone>
+ 
+ 

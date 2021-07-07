@@ -1,0 +1,5 @@
+<!--pages/tishi/index.wxml-->
+<view class="tishi_container">
+ <image class="tishi_img" src="/pages/images/duihao.png"></image>
+ <text class="tishi_text">您已成功签到！</text>
+</view>

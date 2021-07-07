@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+      "van-button": "/dist/button/index",
+      "van-action-sheet": "/dist/action-sheet/index",
+   
+      "wxgetUser":"/pages/common/getUser/index",
+      "wxgetPhone":"/pages/common/getPhone/index"
+  },
+  "navigationBarTitleText": "用户签到"
+  
+    }

@@ -1,0 +1,41 @@
+.header {
+    margin: 0rpx 0 90rpx 50rpx;
+    text-align: center;
+    width: 650rpx;
+    height: 3rpx;
+  }
+  
+  .userAvatarUrl{
+    width:"27vw";
+    height:"27vw";
+  }
+  
+  .content {
+    margin-left: 50rpx;
+    margin-bottom: 60rpx;
+  }
+  
+  .content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 30rpx;
+  }
+  .line-user{
+  border-left:6rpx solid #07c160;
+  padding-left:20rpx;
+  height:30rpx;
+  line-height: 30rpx;
+  }
+  
+  .bottom {
+    border-radius: 20rpx;
+    font-size: 35rpx;
+    min-width:90%;
+    padding: 0rpx;
+    margin:0 auto;
+    height:90rpx;
+    background:#07c160 ;
+    text-align: center;
+    line-height: 80rpx;
+    color:#fff
+  }

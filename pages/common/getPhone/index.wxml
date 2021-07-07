@@ -1,0 +1,32 @@
+<van-popup
+    show="{{ show.round }}"
+    round
+    position="bottom"
+    custom-style="height: 35%"
+    bind:close="hideRound"
+  >
+   
+<view wx:if="{{canIUse}}">
+  <view class='header'>
+   
+    
+  </view>
+  <view class='content'>
+    <view class="line-user">申请获取以下权限</view>
+  
+  </view>
+  <button  class='bottom' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+  <text>授权获取手机号码</text>
+
+    
+  </button>
+  <view wx:if="{{isClose == ''}}">
+
+   <navigator class="bottom2" url="/pages/index/index" type='primary'>暂时不需要</navigator>
+  
+    
+
+  </view>
+</view>
+  
+  </van-popup>

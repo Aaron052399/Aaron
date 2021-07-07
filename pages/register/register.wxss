@@ -1,0 +1,90 @@
+.box{
+  width: 92%;
+  margin:0 auto;
+}
+.inputstyle{
+  height: 90rpx;
+  padding: 15rpx 0 ;
+  background-color: #fff;
+margin-bottom:20rpx;
+  font-size: 28rpx;
+  padding-left:170rpx;
+  color:#333;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.form_button{
+  min-width:92%;
+  margin:25% auto 0;
+  display: block;
+  margin-bottom:30rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  padding:0;
+  color: #fff;
+  background: #ffa500;
+  border-radius: 20rpx;
+}
+ 
+.contentView .text{
+  box-shadow: #bbb 0px 1px 5px;
+  border-radius: 10rpx;
+}
+.contentView .delet{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  top: -30rpx;
+  right: 20rpx;
+  border-radius: 50%;
+  z-index: 9;
+}
+.contentView .delet text{
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.contentView .edit{
+  width: 50rpx;
+  height: 50rpx;
+  top: -30rpx;
+  right: 90rpx;
+  border-radius: 50%;
+  z-index: 9;
+}
+ 
+.inline_block{display: inline-block;}
+ 
+.textrea{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+ 
+.textrea button{
+  display: inline-block;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  padding-left:0;
+  padding-right:0;
+  border-radius:0;
+}
+.textrea button::after{
+  content:'';
+  width:0;
+  height:0;
+  -webkit-transform:scale(1);
+  transform:scale(1);
+  display:none;
+  background-color:transparent;
+}
+.title{ font-weight: bold; color:#ffa500; height:30rpx; line-height: 30rpx; font-size: 30rpx; margin:50rpx 0 50rpx 30rpx; padding-left:30rpx; border-left:3px solid #ffa500;}
+.p_b20{position: fixed; bottom:0; width:100%; height: 310px;  background: #f1f1f1;}
+.name-box{ position: relative;}
+.name-text{ position: absolute; left:0; top:40rpx; height:90rpx; color:#666; font-size:34rpx;width:170rpx; padding-left:20rpx;}
+.pic-box{ position: relative; }
+.pic-text{ position: absolute; left:0; top:40rpx; height:90rpx; color:#666; font-size:34rpx;width:80%; padding-left:30rpx;}

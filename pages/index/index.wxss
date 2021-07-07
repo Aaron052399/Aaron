@@ -1,0 +1,24 @@
+.index_container image{
+ width:100%;
+}
+swiper{
+  width:750rpx;
+  height:997rpx;
+  margin-bottom:140rpx;
+}
+swiper-item image{
+  width:750rpx;
+  height:997rpx;
+}
+.bottom{
+  width:100%;
+  height:140rpx;
+  line-height: 140rpx;
+  color:#fff;
+  font-size: 40rpx;
+  text-align: center;
+  background: #ffa500;
+  font-weight: bold;
+  position: fixed;
+  bottom:0;
+}

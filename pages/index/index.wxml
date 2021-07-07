@@ -1,0 +1,34 @@
+<view class="index_container">
+ <image style=" height:1246rpx;" src="https://api.925h.com/static/micro/1.jpg"></image>
+ <image style=" height:1017rpx;" src="https://api.925h.com/static/micro/2.jpg"></image>
+ <image style=" height:836rpx;" src="https://api.925h.com/static/micro/3.jpg"></image>
+ <image style=" height:877rpx;" src="https://api.925h.com/static/micro/4.jpg"></image>
+ <image style=" height:1218rpx;" src="https://api.925h.com/static/micro/6.jpg"></image>
+ <image style=" height:900rpx;" src="https://api.925h.com/static/micro/7.jpg"></image>
+ <swiper autoplay="true" >
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n1.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n2.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n3.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n4.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n5.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n6.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+   <image src="https://api.925h.com/static/micro/n7.jpg"></image>
+  </swiper-item>
+ </swiper>
+ <view class="bottom">
+ <navigator url="/pages/register/register">点击领取免费课程</navigator>
+ </view>
+</view>

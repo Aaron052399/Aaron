@@ -1,0 +1,22 @@
+<!--pages/activity/signup/signup.wxml-->
+<!-- banner图 -->
+<view class='bg_white' style='padding-bottom:554rpx;'>
+  <image mode='widthFix' src='{{pic}}' style='width:100%;height:auto;'></image>
+</view>
+
+<!-- 表单主要内容 -->
+<view class='p_b20'>
+  <view class="title">点击进行签到</view>
+  <form bindsubmit="formSubmit">
+  <!-- 提交报名 -->
+    <view class='tr p_lr15 bg_white'>
+      <button class='form_button' form-type="submit">
+        <text class='p_tb5 p_lr20 bg_theme white font16 tc block'>立即签到</text>
+      </button>
+    </view>
+  </form>
+</view>
+<wxgetUser class="wxgetUser"></wxgetUser>
+<wxgetPhone class="wxgetPhone"></wxgetPhone>
+ 
+ 
