@@ -5,7 +5,6 @@ App({
     let isAuthUserInfo = wx.getStorageSync('isAuthUserInfo');
     let isAuthPhoneNum = wx.getStorageSync('isAuthPhoneNum');
 
-    console.log(isAuthUserInfo);
     if (isAuthUserInfo != 0 || isAuthUserInfo === '') {
       wx.setStorageSync('isAuthUserInfo', 1);
     }
@@ -13,8 +12,6 @@ App({
     if (isAuthPhoneNum != 0 || isAuthUserInfo === '') {
       wx.setStorageSync('isAuthPhoneNum', 1);
     }
-
-    console.log(isAuthUserInfo);
   },
 
   onLoad(query) {
@@ -79,6 +76,7 @@ App({
     //   icon: 'loading',
     //   duration: 10000,
     //   mask: true
+    
     // });
 
     wx.login({
