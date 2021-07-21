@@ -44,6 +44,12 @@ Page({
     }
    });
   },
+
+  comeBack() {
+    wx.redirectTo({
+      url: '/pages/register/register'
+    });
+  },
   
   bindGetUserInfo: function(e) {
    if (e.detail.userInfo) {

@@ -13,15 +13,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/login/login",
-          "pathName": "pages/login/login",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/register/register",
           "pathName": "pages/register/register",
-          "query": "",
+          "query": "activity_id=20",
           "scene": null
         }
       ]

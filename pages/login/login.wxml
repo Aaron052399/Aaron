@@ -49,7 +49,7 @@
     </view>
   </form>
 </view>
-<wxgetUser class="wxgetUser"></wxgetUser>
+<!-- <wxgetUser class="wxgetUser"></wxgetUser>
 <wxgetPhone class="wxgetPhone"></wxgetPhone>
- 
+<wxlogin class="wxlogin"></wxlogin> -->
  

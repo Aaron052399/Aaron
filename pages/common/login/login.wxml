@@ -1,2 +1,23 @@
-<!--pages/common/login/login.wxml-->
-<text>pages/common/login/login.wxml</text>
+<van-popup
+    show="{{ show.round }}"
+    round
+    position="bottom"
+    custom-style="height: 35%"
+    bind:close="hideRound"
+  >
+   
+<view wx:if="{{canIUse}}">
+  <view class='header'>
+   
+    
+  </view>
+  <view class='content'>
+    <view class="line-user">申请获取以下权限</view>
+    <text>获得你的公开信息(昵称，头像等)</text>
+  </view>
+  <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindLogin">
+    授权登录
+  </button>
+</view>
+  
+  </van-popup>

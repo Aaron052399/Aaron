@@ -4,7 +4,6 @@
 swiper{
   width:750rpx;
   height:997rpx;
-  margin-bottom:140rpx;
 }
 swiper-item image{
   width:750rpx;
