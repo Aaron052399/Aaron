@@ -40,7 +40,7 @@ Component({
         method: 'POST',
         data: {
           token: wx.getStorageSync('user_token'),
-          scene: wx.getStorageSync('scene'),
+          activity_id: wx.getStorageSync('activity_id'),
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
         },

@@ -82,7 +82,7 @@ Page({
       data: {
         token: wx.getStorageSync('user_token'),
         address: wx.getStorageSync('address'),
-        scene: wx.getStorageSync('scene')
+        activity_id: wx.getStorageSync('activity_id')
       },
       success: function (res) {
         switch (res.data.code) {

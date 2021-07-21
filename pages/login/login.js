@@ -23,17 +23,17 @@ Page({
     });
     var that = this;
 
-    var scene1 = decodeURIComponent(query.scene);
-    if (scene1 != "" && scene1 != "undefined") {
-      wx.setStorageSync('scene', scene1);
+    var scene1 = decodeURIComponent(query.activity_id);
+    if (activity_id != "" && activity_id != "undefined") {
+      wx.setStorageSync('activity_id', scene1);
     } else {
-      scene1 = "";
+      activity_id = "";
     }
     wx.request({
-      url: app.globalData.URL + '/ApiLecture/getScene',
+      url: app.globalData.URL + '/ApiLecture/getActivityInfo',
       method: 'POST',
       data: {
-        scene: scene1
+        activity_id: activity_id
       },
       success: function (res) {
         if (res.data.code == 200) {
@@ -63,7 +63,7 @@ Page({
         grade_id: that.data.grades[that.data.index].id,
         token: wx.getStorageSync('user_token'),
         address: wx.getStorageSync('address'),
-        scene: wx.getStorageSync('scene')
+        activity_id: wx.getStorageSync('activity_id')
       },
       success: function (res) {
         switch (res.data.code) {

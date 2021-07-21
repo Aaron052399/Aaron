@@ -52,7 +52,7 @@ Component({
         url: app.globalData.URL + '/ApiLecture/getPhone',
         method: 'POST',
         data: {
-          scene: wx.getStorageSync('scene'),
+          activity_id: wx.getStorageSync('activity_id'),
           address: wx.getStorageSync('address'),
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
