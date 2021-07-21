@@ -16,9 +16,9 @@ App({
 
   onLoad(query) {
     // scene 需要使用 decodeURIComponent 才能获取到生成二维码时传入的 scene
-    var activity_id = decodeURIComponent(query.activity_id);
-    if (activity_id != "" && activity_id != "undefined") {
-      wx.setStorageSync('activity_id', activity_id);
+    var scene = decodeURIComponent(query.scene);
+    if (scene != "" && scene != "undefined") {
+      wx.setStorageSync('scene', scene);
     }
   },
   //设置全局请求URL
@@ -29,7 +29,7 @@ App({
       url: that.globalData.URL + '/ApiLecture/userInfo',
       method: 'POST',
       data: {
-        activity_id: that.activity_id,
+        scene: that.scene,
         encryptedData: data.encryptedData,
         iv: data.iv,
         token: wx.getStorageSync('user_token')
@@ -48,7 +48,7 @@ App({
       url: that.globalData.URL + '/Api/getPhone',
       method: 'POST',
       data: {
-        activity_id: wx.getStorageSync('activity_id'),
+        scene: wx.getStorageSync('scene'),
         address: wx.getStorageSync('address'),
         encryptedData: ret.detail.encryptedData,
         iv: ret.detail.iv,
@@ -87,7 +87,7 @@ App({
             url: that.globalData.URL + '/ApiLecture/login',
             method: 'POST',
             data: {
-              activity_id: wx.getStorageSync('activity_id'),
+              scene: wx.getStorageSync('scene'),
               code: res.code
             },
             success: function (res1) {

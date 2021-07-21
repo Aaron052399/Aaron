@@ -54,18 +54,18 @@ Page({
       wx.setStorageSync("map_num", 1);
     }
 
-    var activity_id = decodeURIComponent(query.activity_id);
-    if (activity_id != "" && activity_id != "undefined") {
-      wx.setStorageSync('activity_id', activity_id);
+    var scene = decodeURIComponent(query.scene);
+    if (scene != "" && scene != "undefined") {
+      wx.setStorageSync('scene', scene);
     } else {
-      activity_id = "";
+      scene = "";
     }
 
     wx.request({
       url: app.globalData.URL + '/ApiLecture/getActivityInfo',
       method: 'POST',
       data: {
-        activity_id: activity_id
+        scene: scene
       },
       success: function (res) {
         if (res.data.code == 200) {
@@ -82,7 +82,7 @@ Page({
       data: {
         token: wx.getStorageSync('user_token'),
         address: wx.getStorageSync('address'),
-        activity_id: wx.getStorageSync('activity_id')
+        scene: wx.getStorageSync('scene')
       },
       success: function (res) {
         switch (res.data.code) {

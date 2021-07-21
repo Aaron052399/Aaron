@@ -15,7 +15,7 @@
         {
           "name": "pages/register/register",
           "pathName": "pages/register/register",
-          "query": "activity_id=20",
+          "query": "",
           "scene": null
         }
       ]

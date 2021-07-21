@@ -52,7 +52,7 @@ Component({
         url: app.globalData.URL + '/ApiLecture/getPhone',
         method: 'POST',
         data: {
-          activity_id: wx.getStorageSync('activity_id'),
+          scene: wx.getStorageSync('scene'),
           address: wx.getStorageSync('address'),
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
@@ -81,6 +81,7 @@ Component({
               }
               break;
             case 201:
+              wx.hideLoading();
               wx.showToast({
                 title: '服务器错误，请重试！',
                 icon: 'none',
@@ -89,6 +90,7 @@ Component({
               app.wxlogin();
               break;
             case 4001:
+              wx.hideLoading();
               wx.showToast({
                 title: res1.data.info,
                 icon: 'none',
@@ -102,6 +104,7 @@ Component({
         },
         complete: function () {
           // wx.hideToast();
+            // wx.hideLoading();
         }
       })
     }
