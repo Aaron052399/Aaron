@@ -40,19 +40,19 @@ Page({
       fail() {}
     });
 
-    var qqmapsdk = new QQMapWX({
-      key: 'UZ2BZ-2VTRU-XR4VZ-4JFHH-KHF37-LBFWT'
-    });
+    // var qqmapsdk = new QQMapWX({
+    //   key: 'UZ2BZ-2VTRU-XR4VZ-4JFHH-KHF37-LBFWT'
+    // });
 
-    let map_num = wx.getStorageSync("map_num");
-    if (map_num == '' || map_num == 'undefined') {
-      qqmapsdk.reverseGeocoder({
-        success: function (res) {
-          wx.setStorageSync("address", res.result.address);
-        },
-      });
-      wx.setStorageSync("map_num", 1);
-    }
+    // let map_num = wx.getStorageSync("map_num");
+    // if (map_num == '' || map_num == 'undefined') {
+    //   qqmapsdk.reverseGeocoder({
+    //     success: function (res) {
+    //       wx.setStorageSync("address", res.result.address);
+    //     },
+    //   });
+    //   wx.setStorageSync("map_num", 1);
+    // }
 
     var scene = decodeURIComponent(query.scene);
     if (scene != "" && scene != "undefined") {
@@ -88,11 +88,17 @@ Page({
         switch (res.data.code) {
           case 200:
             wx.setStorageSync('isSignIn', res.data.data.isSignIn)
-            if(res.data.data.isSignIn == 1)
-            {
-              wx.redirectTo({
-                url: res.data.data.redirectUrl
+            if (res.data.data.isSignIn == 1) {
+              wx.showToast({
+                title: '您已签到成功，请勿重复扫码',
+                icon: 'none',
+                duration: 2000
               });
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: res.data.data.redirectUrl
+                });
+              }, 1000);
             }
             break;
           case 301:
@@ -100,18 +106,19 @@ Page({
               url: res.data.data.redirectUrl
             });
             break;
-            // case 4001:
-            //   wx.showToast({
-            //     title: res.data.info,
-            //     icon: 'none',
-            //     duration: 2000
-            //   });
-            //   setTimeout(function () {
-            //     wx.redirectTo({
-            //       url: '/pages/register/register'
-            //     })
-            //   }, 3000);
-            //   break;
+          case 4001:
+            wx.showToast({
+              title: res.data.info,
+              icon: 'none',
+              duration: 2000
+            });
+            s
+            setTimeout(function () {
+              wx.redirectTo({
+                url: '/pages/register/register'
+              })
+            }, 3000);
+            break;
         }
       },
     });

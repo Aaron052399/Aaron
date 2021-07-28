@@ -1,5 +1,11 @@
 <!--pages/tishi/index.wxml-->
-<view class="tishi_container">
- <image class="tishi_img" src="/pages/images/duihao.png"></image>
- <text class="tishi_text">您已成功签到！</text>
+
+<view class="bg_view">
+  <view class='bg_white'>
+    <image src='{{pic}}'></image>
+  </view>
+  <view class="tishi_container" hidden="{{isHidden}}">
+    <image class="tishi_img" src="/pages/images/duihao.png"></image>
+    <text class="tishi_text">恭喜您，本次活动已签到成功！</text>
+  </view>
 </view>

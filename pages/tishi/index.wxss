@@ -1,25 +1,47 @@
 /* pages/tishi/index.wxss */
-page{
+page {
+    height: 100%;
     background: #fafafa;
 }
-.tishi_container{
+
+.tishi_container {
     display: flex;
     flex-direction: column;
-    align-items: center;  
-    padding-top:300rpx;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:rgba(105,105,105,0.9);
+    width: 300px;
+    padding: 40rpx 0;
+    border-radius: 40rpx;
 }
-.tishi_img{
-    width:100rpx;
-    height:100rpx;
-    background:#07c160 ;
-    border:5px solid #eaeaea;
+
+.tishi_img {
+    width: 100rpx;
+    height: 100rpx;
+    background: #07c160;
+    border: 5px solid #eaeaea;
     border-radius: 80rpx;
-    padding:20rpx;
+    padding: 20rpx;
 }
-.tishi_text{
-    color:#666;
+
+.tishi_text {
+    color: #ffffff;
     text-align: center;
     line-height: 50rpx;
     font-size: 32rpx;
     padding-top: 30rpx;
+}
+
+.bg_view {
+    height: 100vh;
+}
+
+.bg_white>image {
+    box-shadow: 10px 10px 10px #cdcfcf;
+    width: 100%;
+    height: 100vh;
 }

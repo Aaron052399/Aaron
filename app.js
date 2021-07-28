@@ -143,7 +143,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    URL: 'http://dev.api.zhixue.org',
+    URL: 'https://mini.zhixue16.com',
     scene: '',
   },
 

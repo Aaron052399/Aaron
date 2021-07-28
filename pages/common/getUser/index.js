@@ -62,6 +62,13 @@ Component({
                   app.wxlogin();
                 }, 1500);
                 break;
+              case 4001:
+                wx.showToast({
+                  title: res1.data.info,
+                  icon: 'none',
+                  duration: 2000
+                });
+                break;
             default:
               wx.showToast({
                 title: '服务器错误，请重试！',

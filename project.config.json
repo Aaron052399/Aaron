@@ -39,8 +39,8 @@
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.18.0",
-  "appid": "wx7475a976a47b0e59",
+  "libVersion": "2.14.1",
+  "appid": "wxad9df846b6e208ae",
   "projectname": "register",
   "debugOptions": {
     "hidedInDevtools": []

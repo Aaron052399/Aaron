@@ -1,7 +1,7 @@
 <!--pages/activity/signup/signup.wxml-->
 <!-- banner图 -->
 <view class='bg_white'>
-  <image mode='widthFix' src='{{pic}}' style='width:100%;height:100%;'></image>
+  <image src='{{pic}}'></image>
 </view>
 
 <!-- 表单主要内容 -->
@@ -17,6 +17,6 @@
 </view> -->
 <wxgetPhone class="wxgetPhone"></wxgetPhone>
 <wxgetUser class="wxgetUser"></wxgetUser>
-<wxlogin class="wxlogin"></wxlogin>
+<!-- <wxlogin class="wxlogin"></wxlogin> -->
  
  
