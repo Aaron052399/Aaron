@@ -9,8 +9,7 @@
       <button class='bottom' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
         <text>授权获取手机号码</text>
       </button>
-      <view wx:if="{{isClose == ''}}">
-        <!-- <navigator class="bottom2" url="/pages/index/index" type='primary'></navigator> -->
+      <view wx:if="{{isShow}}">
         <view class="bottom2" type="primary" bindtap="comeBack">暂时不需要</view>
       </view>
     </view>

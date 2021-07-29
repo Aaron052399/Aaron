@@ -39,3 +39,17 @@
     line-height: 80rpx;
     color:#fff
   }
+
+  .bottom2 {
+    border-radius: 20rpx;
+    font-size: 35rpx;
+    width: 90%;
+    margin:0 auto;
+    height:98rpx;
+    line-height: 98rpx;
+    background:#eee;
+    text-align: center;
+    color:#07c160;
+    padding:0;
+    margin-top:20rpx;
+  }

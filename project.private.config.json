@@ -11,14 +11,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "name": "pages/register/register",
-          "pathName": "pages/register/register",
-          "query": "scene=20",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }

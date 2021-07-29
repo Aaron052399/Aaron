@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/register/register",
         "pages/index/index",
+        "pages/register/register",
         "pages/login/login",
         "pages/logs/logs",
         "pages/tishi/index"

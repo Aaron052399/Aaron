@@ -13,46 +13,36 @@ Page({
     })
   },
   onShow: function () {
-    let wxgetPhone = this.selectComponent('.wxgetPhone');
-    let wxgetUser = this.selectComponent('.wxgetUser');
-
-    let isAuthPhoneNum = wx.getStorageSync('isAuthPhoneNum');
-    let isAuthUserInfo = wx.getStorageSync('isAuthUserInfo');
-
     let userToken = wx.getStorageSync('user_token');
-    if (userToken == '' || userToken == 'undefined') {
+    if (userToken === '' || userToken === 'undefined') {
       app.wxlogin();
     }
+  },
+  onLoad: function (query) {
+    let wxgetPhone = this.selectComponent('.wxgetPhone');
+    let wxgetUser = this.selectComponent('.wxgetUser');
+    let isAuthUserInfo = wx.getStorageSync('isAuthUserInfo');
+    let isAuthPhoneNum = wx.getStorageSync('isAuthPhoneNum');
 
-    if (isAuthUserInfo != false) {
+    let isAuth = 0;
+
+    if (isAuthUserInfo == 0 && isAuthPhoneNum == 0) {
+      isAuth = 1;
+    }
+
+    if (isAuthUserInfo == 1) {
       wxgetUser && wxgetUser.showRound();
     }
 
-    if (isAuthPhoneNum != false) {
+    if (isAuthPhoneNum == 1) {
       wxgetPhone && wxgetPhone.showRound();
     }
 
-  },
-  onLoad: function (query) {
     var that = this;
     wx.checkSession({
       success() {},
       fail() {}
     });
-
-    // var qqmapsdk = new QQMapWX({
-    //   key: 'UZ2BZ-2VTRU-XR4VZ-4JFHH-KHF37-LBFWT'
-    // });
-
-    // let map_num = wx.getStorageSync("map_num");
-    // if (map_num == '' || map_num == 'undefined') {
-    //   qqmapsdk.reverseGeocoder({
-    //     success: function (res) {
-    //       wx.setStorageSync("address", res.result.address);
-    //     },
-    //   });
-    //   wx.setStorageSync("map_num", 1);
-    // }
 
     var scene = decodeURIComponent(query.scene);
     if (scene != "" && scene != "undefined") {
@@ -73,16 +63,18 @@ Page({
             pic: res.data.data.bgpic,
             grades: res.data.data.grade,
           });
+          wx.setStorageSync('scene', res.data.data.scene)
         }
       }
     });
+
     wx.request({
       url: app.globalData.URL + '/ApiLecture/register',
       method: 'POST',
       data: {
         token: wx.getStorageSync('user_token'),
-        address: wx.getStorageSync('address'),
-        scene: wx.getStorageSync('scene')
+        scene: wx.getStorageSync('scene'),
+        isAuth: isAuth,
       },
       success: function (res) {
         switch (res.data.code) {
@@ -94,12 +86,19 @@ Page({
                 icon: 'none',
                 duration: 2000
               });
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: res.data.data.redirectUrl
-                });
-              }, 1000);
             }
+            if(res.data.data.isSignIn == 0){
+              wx.showToast({
+                title: '恭喜您，已签到成功！',
+                icon: 'none',
+                duration: 2000
+              });
+            }
+            setTimeout(function () {
+              wx.redirectTo({
+                url: res.data.data.redirectUrl
+              });
+            }, 1000);
             break;
           case 301:
             wx.redirectTo({
@@ -112,7 +111,6 @@ Page({
               icon: 'none',
               duration: 2000
             });
-            s
             setTimeout(function () {
               wx.redirectTo({
                 url: '/pages/register/register'

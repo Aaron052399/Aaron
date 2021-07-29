@@ -13,7 +13,7 @@ Component({
       customIconPosition: false
     },
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isClose: wx.getStorageSync('isClose'),
+    isShow: wx.getStorageSync('isShow'),
     isHide: wx.getStorageSync('isAuthPhoneNum'),
   },
   methods: {
@@ -53,7 +53,6 @@ Component({
         method: 'POST',
         data: {
           scene: wx.getStorageSync('scene'),
-          address: wx.getStorageSync('address'),
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
           token: wx.getStorageSync('user_token'),

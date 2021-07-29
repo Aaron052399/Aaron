@@ -62,7 +62,6 @@ Page({
         name: e.detail.value.userName,
         grade_id: that.data.grades[that.data.index].id,
         token: wx.getStorageSync('user_token'),
-        address: wx.getStorageSync('address'),
         scene: wx.getStorageSync('scene')
       },
       success: function (res) {

@@ -13,7 +13,8 @@ Component({
       customIconPosition: true
     },
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isHide:wx.getStorageSync('isAuthUserInfo'),
+    isShow: wx.getStorageSync('isShow'),
+    isHide: wx.getStorageSync('isAuthUserInfo'),
   },
   methods: {
     toggle(type, show) {
@@ -28,6 +29,12 @@ Component({
 
     hideRound() {
       this.toggle('round', false);
+    },
+
+    comeBack() {
+      wx.redirectTo({
+        url: '/pages/index/index'
+      });
     },
 
     bindGetUserInfo(e) {
@@ -51,24 +58,24 @@ Component({
               wx.setStorageSync('isAuthUserInfo', 0);
               that.hideRound();
               break;
-              case 201:
-                wx.showToast({
-                  title: res1.data.info,
-                  icon: 'none',
-                  duration: 2000
-                });
-                setTimeout(function () {
-                  wx.hideToast();
-                  app.wxlogin();
-                }, 1500);
-                break;
-              case 4001:
-                wx.showToast({
-                  title: res1.data.info,
-                  icon: 'none',
-                  duration: 2000
-                });
-                break;
+            case 201:
+              wx.showToast({
+                title: res1.data.info,
+                icon: 'none',
+                duration: 2000
+              });
+              setTimeout(function () {
+                wx.hideToast();
+                app.wxlogin();
+              }, 1500);
+              break;
+            case 4001:
+              wx.showToast({
+                title: res1.data.info,
+                icon: 'none',
+                duration: 2000
+              });
+              break;
             default:
               wx.showToast({
                 title: '服务器错误，请重试！',
@@ -87,6 +94,9 @@ Component({
   },
   onLoad: function () {
     var that = this;
+    that.setData({
+      'isShow': wx.getStorageSync('isShow')
+    })
     // 查看是否授权
     wx.getSetting({
       success(res) {
@@ -101,5 +111,5 @@ Component({
         }
       }
     })
-  }
+  },
 });

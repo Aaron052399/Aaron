@@ -11,6 +11,12 @@ App({
 
     if (isAuthPhoneNum != 0 || isAuthUserInfo === '') {
       wx.setStorageSync('isAuthPhoneNum', 1);
+    }  
+
+    let userToken = wx.getStorageSync('user_token');
+
+    if (userToken == '' || userToken == 'undefined') {
+      this.wxlogin();
     }
   },
 
@@ -71,13 +77,6 @@ App({
     wx.showLoading({
       title: '加载中...',
     })
-    // wx.showToast({
-    //   title: '请稍后...',
-    //   icon: 'loading',
-    //   duration: 10000,
-    //   mask: true
-    
-    // });
 
     wx.login({
       success(res) {
@@ -87,19 +86,22 @@ App({
             url: that.globalData.URL + '/ApiLecture/login',
             method: 'POST',
             data: {
-              scene: wx.getStorageSync('scene'),
               code: res.code
             },
             success: function (res1) {
               if (res1.data.code == 200) {
                 wx.setStorageSync('user_token', res1.data.data.token);
                 wx.setStorageSync("step", res1.data.data.step);
-                wx.setStorageSync("isClose", res1.data.data.isClose);
-                wx.setStorageSync("isLogin", 1);
+                wx.setStorageSync("isShow", res1.data.data.isShow);
+                wx.getStorageSync("isLogin", 1);
+                wx.setStorageSync("isAuthPhoneNum", res1.data.data.isAuthPhoneNum);
+                wx.setStorageSync("isAuthUserInfo", res1.data.data.isAuthUserInfo);
+                if (res1.data.data.scene > 0) {
+                  wx.setStorageSync("scene", res1.data.data.scene);
+                }
               }
             },
             complete: function () {
-              // wx.hideToast();
               wx.hideLoading();
             }
           })
@@ -127,6 +129,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              // console.log(res);
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 

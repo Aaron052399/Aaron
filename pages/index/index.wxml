@@ -31,6 +31,6 @@
  <view style="height:140rpx;width:100%;"></view>
  <view class="bottom">
  <!-- <navigator url="/pages/register/register">点击领取免费课程</navigator> -->
- <navigator bindtap="comeBack">点击领取免费课程</navigator>
+ <navigator bindtap="comeBack">点击签到</navigator>
  </view>
 </view>
